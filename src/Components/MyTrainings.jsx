@@ -1,5 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
+const { navigate } = useNavigation()
 
 const Trains = (props) => {
     return (
@@ -17,7 +20,7 @@ function MyTrainings() {
   return (
     <View style={styles.trainings}>
       <Text style={styles.textTitle}>Meus Treinos</Text>
-      <Trains day={"Segunda-Feira"} train={"Peito e Triceps"} />
+      <Trains day={"Segunda-Feira"} train={"Peito e Triceps"} onPress={() => navigate('treino')}/>
       <Trains day={"Terça-Feira"} train={"Costas e Biceps"} />
       <Trains day={"Quarta-Feira"} train={"Quadriceps e Ombro"} />
       <Trains day={"Quinta-Feira"} train={"Posterior e Trapézio"} />
